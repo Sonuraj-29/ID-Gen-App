@@ -1,0 +1,18 @@
+<div style="height:85vh;" class="text-center d-flex justify-content-center align-items-center">
+    <form (ngSubmit)="loginUser()" #loginForm="ngForm" class="container col-md-4 col-lg-3">
+        <h2 class="mb-4">Please Sign In</h2>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control mb-2" id="floatingInput" #email="ngModel" [(ngModel)]="loginData.Email" name="email" placeholder="name@example.com" required pattern="^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <label for="floatingInput">Email address</label>
+            <small [hidden]="email.valid || email.pristine" class="text-danger form-text">Enter a valid email address</small>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control mb-2" id="floatingPassword" #password="ngModel" [(ngModel)]="loginData.Password" placeholder="Password"  name="password" required>
+            <label for="floatingPassword">Password</label>
+            <small [hidden]="password.valid || password.pristine" class="text-danger form-text">Incorrect password format</small>
+        </div>
+        <div class=" pt-3">
+            <button [disabled]="!loginForm.form.valid" class="w-75 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </div>
+    </form>
+</div>

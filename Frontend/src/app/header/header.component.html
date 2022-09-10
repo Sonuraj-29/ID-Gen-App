@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-light px-5">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">ID Generator</a>
+      <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" [ngbCollapse]="isMenuCollapsed">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="" (click)="isMenuCollapsed = true" *ngIf = '!auth.loggedIn()'>Home</a>
+          <a class="nav-link" routerLink="login" (click)="isMenuCollapsed = true" *ngIf = '!auth.loggedIn()'>Login</a>
+          <a class="nav-link" routerLink="dashboard" (click)="isMenuCollapsed = true" *ngIf = 'auth.loggedIn()'>Dashboard</a>
+          <a class="nav-link" routerLink="register" (click)="isMenuCollapsed = true" *ngIf = '!auth.loggedIn()'>Register</a>
+          <a class="nav-link" routerLink="apply" (click)="isMenuCollapsed = true" *ngIf = 'auth.loggedIn()'>Apply</a>
+          <a class="nav-link" routerLink="status" (click)="isMenuCollapsed = true" *ngIf = 'auth.loggedIn()'>Application Status</a>
+          <a class="nav-link" routerLink="logout" (click)="isMenuCollapsed = true" *ngIf = 'auth.loggedIn()' (click)="logoutUser()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

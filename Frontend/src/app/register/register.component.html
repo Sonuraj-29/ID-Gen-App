@@ -1,0 +1,30 @@
+<div style="height:85vh;" class="text-center d-flex justify-content-center align-items-center">
+    <!-- form start -->
+    <form (ngSubmit)="registerUser()" class="container col-md-3" #registerForm = "ngForm">
+        <h2 class="mb-4">Student Registration</h2>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control mb-2" id="floatingName" #name="ngModel" name="studentName" placeholder="Name" required [(ngModel)]="registerData.Name">
+            <label for="floatingName">Name</label>
+            <small [hidden]="name.valid || name.pristine" class="text-danger form-text">Please enter your name</small>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control mb-2" id="floatingEmail" #email="ngModel" name="email" placeholder="name@example.com" required pattern="^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="registerData.Email">
+            <label for="floatingEmail">Email address</label>
+            <small [hidden]="email.valid || email.pristine" class="text-danger form-text">Enter a valid email address.</small>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control mb-2" id="floatingPassword" placeholder="Password" #password="ngModel" name="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[\]:;<>,.?/~_+\-=|]).{8,20}$" required [(ngModel)]="registerData.Password">
+            <label for="floatingPassword">Password</label>
+            <small [hidden]="password.valid || password.pristine" class="text-danger form-text">Your password must be 8-20 characters long, contain uppercase and lowercase letters, numbers, and special characters and must not contain spaces.</small>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control mb-2" id="floatingPassword2" placeholder="Password" name="confPassword" required>
+            <label for="floatingPassword2">Confirm Password</label>
+            <!-- <small class="text-danger form-text">Password doesnot match.</small> -->
+        </div>
+        <div class=" pt-3">
+            <button [disabled]="!registerForm.form.valid" class="w-75 btn btn-lg btn-primary" type="submit">Register</button>
+        </div>
+    </form>
+    <!-- form end -->
+</div>
