@@ -10,7 +10,7 @@ import { applyModel } from './apply.model';
 })
 export class ApplyComponent implements OnInit {
 
-  applyData = new applyModel('', '', '', '', '', '', '', '', '')
+  applyData = new applyModel('', '', '', '', '', '', '', '')
 
   constructor(private http : HttpClient) { }
 

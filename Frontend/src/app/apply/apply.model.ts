@@ -3,7 +3,6 @@ export class applyModel{
 
         public FirstName : String,
         public LastName : String,
-        public Photo : String,
         public Email : String,
         public Phone : String,
         public Course : String,

@@ -26,32 +26,44 @@
               </div>
         </div>
         <div class="row mb-3">
-            <div class="col">
+            <div class="col d-flex align-items-center">
+                <label for="course" class="col-3">Course :</label>
                 <select class="form-select" #course="ngModel" [(ngModel)]="applyData.Course" name="course" aria-label="Default select example">
-                    <option selected>Course Type</option>
+                    <option value="Full Stack Development">Full Stack Development</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col d-flex align-items-center">
+                <label for="batch" class="col-3">Batch :</label>
+                <select class="form-select" #batch="ngModel" [(ngModel)]="applyData.Batch" name="batch" aria-label="Default select example">
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
             </div>
         </div>
-        <div class="row mb-3">
+        <!-- <div class="row mb-3">
             <div class="col">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Batch</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Course Starting Date" aria-label="First name">
+                <input type="date" class="form-control" placeholder="Course Starting Date" aria-label="First name">
               </div>
               <div class="col">
                 <input type="text" class="form-control" placeholder="Course Ending Date" aria-label="Last name">
               </div>
+        </div> -->
+        <div class="row mb-3">
+            <div class="col d-flex">
+                <label for="startDate" class="mb-2 col-4">Course Starting date</label>
+                <input type="date" class="form-control" #startDate="ngModel" [(ngModel)]="applyData.StartDate" name="startDate" placeholder="Course Start Date" aria-label="Course Start Date">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col d-flex">
+                <label for="endDate" class="mb-2 col-4">Course Ending date</label>
+                <input type="date" class="form-control" #endDate="ngModel" [(ngModel)]="applyData.EndDate" name="endDate" placeholder="Course End Date" aria-label="Course End Date">
+            </div>
         </div>
         <div class=" pt-3">
             <button class="w-75 btn btn-lg btn-primary" type="submit">Submit Application</button>
