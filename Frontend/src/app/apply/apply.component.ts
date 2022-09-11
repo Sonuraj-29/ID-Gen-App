@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobalComponent } from '../globalComponent';
 
 @Component({
@@ -10,7 +11,9 @@ import { GlobalComponent } from '../globalComponent';
 export class ApplyComponent implements OnInit {
 
 
-  constructor(private http : HttpClient) { }
+  constructor(
+    private http : HttpClient,
+    private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +22,11 @@ export class ApplyComponent implements OnInit {
 
     var form = document.getElementById('applyForm') as HTMLFormElement
     let formData = new FormData(form)
-    this.http.post(`${GlobalComponent.appUri}/apply`, formData).subscribe()
+    formData.append('status','Submitted. Pending approval')
+    this.http.post(`${GlobalComponent.appUri}/apply`, formData).subscribe((data:any)=>{
+      alert(data.message)
+      this.router.navigateByUrl('status')
+    })
   }
 
 }

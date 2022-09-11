@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GlobalComponent } from '../globalComponent';
 
 @Component({
   selector: 'app-status',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  constructor(private http : HttpClient) { }
+  constructor(
+    private http : HttpClient
+    ) { }
 
   ngOnInit(): void {
   }

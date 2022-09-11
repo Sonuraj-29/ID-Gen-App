@@ -12,7 +12,8 @@ const studentSchema = new mongoose.Schema({
     Course : String,
     Batch : String,
     StartDate : String,
-    EndDate : String
+    EndDate : String,
+    Status : String
     
 })
 

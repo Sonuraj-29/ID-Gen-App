@@ -17,10 +17,15 @@ router.post('/', upload.single('photo'), (req,res)=>{
         Course : req.body.course,
         Batch : req.body.batch,
         StartDate : req.body.startDate,
-        EndDate : req.body.endDate
+        EndDate : req.body.endDate,
+        Status : req.body.status
     })
 
     newData.save()
+
+    res.send({
+        message : 'Application submitted successfully.'
+    })
 
 })
 
