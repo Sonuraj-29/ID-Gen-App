@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GlobalComponent } from '../globalComponent';
-import { applyModel } from './apply.model';
 
 @Component({
   selector: 'app-apply',
@@ -10,7 +9,6 @@ import { applyModel } from './apply.model';
 })
 export class ApplyComponent implements OnInit {
 
-  applyData = new applyModel('', '', '', '', '', '', '', '')
 
   constructor(private http : HttpClient) { }
 
@@ -18,7 +16,10 @@ export class ApplyComponent implements OnInit {
   }
 
   apply(){
-    this.http.post(`${GlobalComponent.appUri}/apply`, this.applyData).subscribe()
+
+    var form = document.getElementById('applyForm') as HTMLFormElement
+    let formData = new FormData(form)
+    this.http.post(`${GlobalComponent.appUri}/apply`, formData).subscribe()
   }
 
 }

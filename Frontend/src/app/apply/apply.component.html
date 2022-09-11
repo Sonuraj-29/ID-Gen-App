@@ -1,73 +1,73 @@
 <div style="height:85vh;" class="text-center d-flex justify-content-center align-items-center">
-    <form #applyForm="ngForm" class="col-sm-3" (ngSubmit)="apply()">
+    <form #applyForm="ngForm" class="col-sm-3" (ngSubmit)="apply()" id="applyForm">
         <h2 class="mb-4">Apply for your ID</h2>
+        <!-- Name field -->
         <div class="row mb-3">
             <div class="col">
-              <input type="text" class="form-control" #firstName="ngModel" [(ngModel)]="applyData.FirstName" name="firstName" placeholder="First name" aria-label="First name">
+              <input type="text" class="form-control" name="firstName" placeholder="First name" aria-label="First name">
             </div>
             <div class="col">
-              <input type="text" class="form-control" #lastName="ngModel" [(ngModel)]="applyData.LastName" name="lastName" placeholder="Last name" aria-label="Last name">
+              <input type="text" class="form-control"  name="lastName" placeholder="Last name" aria-label="Last name">
             </div>
         </div>
+        <!-- Email field -->
         <div class="row mb-3">
             <div class="col">
-                <input type="email" class="form-control" #email="ngModel" [(ngModel)]="applyData.Email" name="email" placeholder="Email Address" aria-label="First name">
+                <input type="email" class="form-control"  name="email" placeholder="Email Address" aria-label="First name">
             </div>
         </div>
+        <!-- Phone field -->
         <div class="row mb-3">
             <div class="col">
-                <input type="text" class="form-control" #phone="ngModel" [(ngModel)]="applyData.Phone" name="phone" placeholder="Mobile Number" aria-label="Last name">
+                <input type="text" class="form-control"  name="phone" placeholder="Mobile Number" aria-label="Last name">
             </div>
         </div>
+        <!-- Photo select -->
         <div class="row">
             <div class="input-group mb-3 col">
-                <label class="input-group-text" for="inputGroupFile01">Upload Photo</label>
-                <input type="file" class="form-control" id="inputGroupFile01">
+                <label class="input-group-text" for="photo">Upload Photo</label>
+                <input type="file" class="form-control" name="photo">
               </div>
         </div>
+        <!-- Course Type -->
         <div class="row mb-3">
             <div class="col d-flex align-items-center">
-                <label for="course" class="col-3">Course :</label>
-                <select class="form-select" #course="ngModel" [(ngModel)]="applyData.Course" name="course" aria-label="Default select example">
+                <label for="course" class="col-4">Course :</label>
+                <select class="form-select"  name="course" aria-label="Default select example">
                     <option value="Full Stack Development">Full Stack Development</option>
                     <option value="Cyber Security">Cyber Security</option>
                     <option value="Digital Marketing">Digital Marketing</option>
                 </select>
             </div>
         </div>
+        <!-- Batch -->
         <div class="row mb-3">
             <div class="col d-flex align-items-center">
-                <label for="batch" class="col-3">Batch :</label>
-                <select class="form-select" #batch="ngModel" [(ngModel)]="applyData.Batch" name="batch" aria-label="Default select example">
+                <label for="batch" class="col-4">Batch :</label>
+                <select class="form-select" name="batch" aria-label="Default select example">
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
             </div>
         </div>
-        <!-- <div class="row mb-3">
-            <div class="col">
-                <input type="date" class="form-control" placeholder="Course Starting Date" aria-label="First name">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Course Ending Date" aria-label="Last name">
-              </div>
-        </div> -->
+        <!-- Course Starting Date -->
         <div class="row mb-3">
-            <div class="col d-flex">
-                <label for="startDate" class="mb-2 col-4">Course Starting date</label>
-                <input type="date" class="form-control" #startDate="ngModel" [(ngModel)]="applyData.StartDate" name="startDate" placeholder="Course Start Date" aria-label="Course Start Date">
+            <div class="col d-flex align-items-center">
+                <label for="startDate" class="mb-2 col-5">Course Starting date :</label>
+                <input type="date" class="form-control" name="startDate" placeholder="Course Start Date" aria-label="Course Start Date">
             </div>
         </div>
+        <!-- Course Ending Date -->
         <div class="row mb-3">
-            <div class="col d-flex">
-                <label for="endDate" class="mb-2 col-4">Course Ending date</label>
-                <input type="date" class="form-control" #endDate="ngModel" [(ngModel)]="applyData.EndDate" name="endDate" placeholder="Course End Date" aria-label="Course End Date">
+            <div class="col d-flex align-items-center">
+                <label for="endDate" class="mb-2 col-5">Course Ending date :</label>
+                <input type="date" class="form-control" name="endDate" placeholder="Course End Date" aria-label="Course End Date">
             </div>
         </div>
+        <!-- Submit Button -->
         <div class=" pt-3">
             <button class="w-75 btn btn-lg btn-primary" type="submit">Submit Application</button>
         </div>
     </form>
 </div>
-{{applyData | json}}

@@ -6,9 +6,9 @@ const studentSchema = new mongoose.Schema({
 
     FirstName : String,
     LastName : String,
-    Photo : String,
     Email : String,
     Phone : String,
+    Photo : Buffer,
     Course : String,
     Batch : String,
     StartDate : String,
